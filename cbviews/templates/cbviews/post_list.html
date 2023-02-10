@@ -1,0 +1,9 @@
+<h1>List View</h1>
+<hr>
+
+{% for object in object_list %}
+<h3>Title: {{ object.title}}</h3>
+<p>Content: {{ object.content }}</p>
+
+<hr>
+{% endfor %}
