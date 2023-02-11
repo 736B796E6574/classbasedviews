@@ -4,6 +4,6 @@
 {% for object in object_list %}
 <h3>Title: {{ object.title}}</h3>
 <p>Content: {{ object.content }}</p>
-
+<a href="{% url 'my_update_view' object.id %}">Update post</a>
 <hr>
 {% endfor %}
