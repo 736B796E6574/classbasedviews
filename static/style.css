@@ -1,9 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 * {
 margin: 0;
 padding: 0;
 box-sizing: border-box;
+font-family: "Montserrat", sans-serif;
 }
 
 body{
     background-color: #C9D7F8;
+}
+
+#header{
+background-color: #80CFA9;
+text-align: center;
+padding: 30px 0;
+color: rgb(24, 43, 30);
+}
+
+#header h1{
+    margin:auto;
 }
