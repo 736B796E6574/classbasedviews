@@ -14,6 +14,9 @@
 
     <div id="header">
         <h1>List View</h1>
+        <div id="create-post-link-container">
+            <a id="create-post-link" href="{% url 'create_view' %}">Click Here To Add Post</a>
+        </div>
     </div>
     <hr>
 
@@ -27,8 +30,10 @@
             <p><span>Created on: </span>{{ object.created_on }}</p>
             <p><span>Content: </span>{{ object.content }}</p>
             <p><span>Status: </span>{{ object.status }}</p>
-            <a href="{% url 'my_update_view' object.id %}">Update post</a>
-            <a href="{% url 'delete_view' object.id %}">Delete post</a>
+            <div id="crud-buttons-container">
+                <a href="{% url 'my_update_view' object.id %}">Update post</a>
+                <a href="{% url 'delete_view' object.id %}">Delete post</a>
+            </div>
         </div>
     </div>
     <hr>
