@@ -13,8 +13,24 @@ class PostDetail(generic.DetailView):
     template_name = 'post_detail.html'
 
 
+class PostCreateView(generic.CreateView):
+    model = Post
+    fields = ['title', 'content']
+    success_url = reverse_lazy('my_list_view')
+
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
+
+
 class PostUpdateView(generic.UpdateView):
     model = Post
-    fields = '__all__' 
+    fields = ['title', 'content']
     template_name_suffix = '_update_form'
+    success_url = reverse_lazy('my_list_view')
+
+
+class PostDeleteView(generic.DeleteView):
+    model = Post
     success_url = reverse_lazy('my_list_view')
