@@ -15,8 +15,13 @@
     <div id="header">
         <h1>List View</h1>
         <div id="create-post-link-container">
-            <a id="create-post-link" href="{% url 'create_view' %}">Click Here To Add Post</a>
+            <a id="create-post-link" href="{% url 'create_view' %}">Click here to add a post</a>
         </div>
+        <div id="view-admin-link-container">
+            <a id="view-admin-link" href="{% url 'admin:index' %}">Click here to view admin panel</a>
+        </div>
+
+
     </div>
     <hr>
 

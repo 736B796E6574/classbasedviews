@@ -43,7 +43,8 @@ body {
 }
 
 #create-post-link-container,
-#crud-buttons-container {
+#crud-buttons-container,
+#view-admin-link-container {
     margin-top: 20px;
 }
 
