@@ -2,6 +2,7 @@ from django.views import generic
 from .models import Post
 from django.contrib import messages
 from django.urls import reverse_lazy
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 
 
 class PostList(generic.ListView):
@@ -24,13 +25,23 @@ class PostCreateView(generic.CreateView):
         return super().form_valid(form)
 
 
-class PostUpdateView(generic.UpdateView):
+class PostUpdateView(UserPassesTestMixin, LoginRequiredMixin,generic.UpdateView):
     model = Post
     fields = ['title', 'content']
     template_name_suffix = '_update_form'
     success_url = reverse_lazy('my_list_view')
 
+    
+    def test_func(self):
+        obj = self.get_object()
+        return obj.author == self.request.user
 
-class PostDeleteView(generic.DeleteView):
+
+class PostDeleteView(UserPassesTestMixin, LoginRequiredMixin,generic.DeleteView):
     model = Post
     success_url = reverse_lazy('my_list_view')
+
+    def test_func(self):
+        obj = self.get_object()
+        return obj.author == self.request.user
+
