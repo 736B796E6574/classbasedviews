@@ -1,1 +1,1 @@
-This started as a repo for me to learn about these class based views. I came into the light and learned to love them. This is now where I'll be testing how the different settings work when I get stuck.
+Just a blog I set up for experimenting with class based views
